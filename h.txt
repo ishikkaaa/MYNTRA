@@ -1,0 +1,142 @@
+ <div class="gallery">
+            <div  class="row">
+                <img  src="https://m.media-amazon.com/images/M/MV5BYjg0OTY5N2UtZDljZS00NDc2LWI1MDAtMDdmN2Q3OTNkMjA1XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg" alt="Friends">
+                <img src="https://m.media-amazon.com/images/I/71ml6HO4ocL._AC_UF1000,1000_QL80_.jpg" alt="Stranger Things">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdSdbMKaBsXYh7KR40csy1I7qkKJvAIkHaAg&s" alt="">
+            </div>
+            <br>
+            <div class="row2">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/The_Big_Bang_Theory_Season_1.jpg" alt="The Big Bang Theory">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOGCUHox_Lfxh8e6LUi2Cyfnx94Thu0JIhtg&s" alt="Game of Thrones">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeIJp31qSrLO5C0PUpNpnPoY1GoChyRrU30g&s" alt="">
+            </div>
+        </div>
+    <footer>
+        <p>&copy; 2024 Trend Treasure</p>
+    </footer>
+
+
+     <div class="head">
+        <h1>Seriestyle</h1>
+        <h4>Welcome to the cinematic world!</h4>
+        <h4>Search for your favorite web series and movies and create outfits inspired by them!</h4>
+        <form id="search-form">
+            <input type="text" id="search-bar" placeholder="Search for outfits...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+
+
+
+
+    /* Reset and basic styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    line-height: 1.6;
+}
+
+#heading {
+    background-color: rgb(240, 210, 215);
+    color: black;
+    padding: 1rem;
+    text-align: center;
+}
+
+#heading h1 {
+    margin-bottom: 0.5rem;
+}
+
+#search-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#search-bar {
+    flex: 1;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #fff;
+}
+
+button[type="submit"] {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+button[type="submit"]:hover {
+    background-color: pink;
+    border-color: white;
+}
+
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.row {
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row2 {
+    display: flex;
+    justify-content: space-between;
+}
+.row img {
+    width: 100%;
+    max-width: 300px; /* Adjust based on your design */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-right: 50px;
+}
+
+.row2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-right: 50px;
+}
+
+.row img:hover {
+    transform: translateY(-5px);
+}
+
+.row2 img:hover {
+    transform: translateY(-5px);
+}
+
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}

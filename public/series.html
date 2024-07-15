@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeriesStyle - Outfits Inspired by Movies & Web Series</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="heading">
+        <h1>SeriesStyle</h1>
+        <h4>Welcome to the cinematic xworld!</h4>
+        <h4>Search for your favorite web series and movies and create outfits inspired by them!</h4>
+        <br>
+        <form id="search-form">
+            <input type="text" id="search-bar" placeholder="Search for outfits...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div id="results" class="row1">
+        <a href="./emily.html"><img src="https://m.media-amazon.com/images/M/MV5BYjg0OTY5N2UtZDljZS00NDc2LWI1MDAtMDdmN2Q3OTNkMjA1XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg" alt="Friends"></a>
+        <a href="./toAll.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeIJp31qSrLO5C0PUpNpnPoY1GoChyRrU30g&s" alt="Stranger Things"></a>
+        <a href="./GG.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR62MdxJ7Teuj3x1qycpzbMeyHbqxzwxUfwYg&s" alt="The Big Bang Theory"></a>
+        <a href="./friends.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNaAUE9ECCFVikmizRowFtc46GxX_bxWJzjw&s" alt="Game of Thrones"></a>
+    </div>
+    <script>
+        document.getElementById('search-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const query = document.getElementById('search-bar').value;
+
+            if (query.trim() === '') {
+                alert('Please enter a search term');
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/search?query=${encodeURIComponent(query)}`);
+                const results = await response.json();
+
+                displayResults(results);
+            } catch (error) {
+                console.error('Error fetching search results:', error);
+                alert('An error occurred while searching. Please try again.');
+            }
+        });
+
+        function displayResults(results) {
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = '';
+
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+                return;
+            }
+
+            results.forEach(result => {
+                const img = document.createElement('img');
+                img.src = result.Poster;
+                img.alt = result.Title;
+                img.style.width = '30%';
+                img.style.margin = '10px';
+                img.style.border = '2px solid black';
+                img.style.borderRadius = '20px';
+                img.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                img.style.transition = 'transform 0.3s ease-in-out';
+
+                img.addEventListener('mouseover', () => {
+                    img.style.transform = 'translateY(-5px)';
+                });
+                img.addEventListener('mouseout', () => {
+                    img.style.transform = 'translateY(0)';
+                });
+
+                resultsContainer.appendChild(img);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(243, 217, 221);
+}
+
+html, body {
+    height: 100%;
+}
+
+.heading {
+    height: 30%; 
+    text-align: center;
+}
+.heading h1{
+    padding-top: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+}
+.heading h4{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+
+#search-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#search-bar {
+    flex: 1;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: pink;
+    border-color: white;
+}
+
+.row1 {
+    height: auto; /* Ensures the container height adjusts based on content */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.row1 a {
+    flex: 1 0 300px; /* Equal width for each item, with a minimum width of 300px */
+    text-align: center;
+    margin: 10px;
+    height: 100%; /* Ensure each link stretches to full height of parent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row1 a img {
+    max-width: 100%;
+    height: auto;
+    width: 100%; /* Ensure each image fills its parent container */
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.row1 a img:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
